@@ -65,14 +65,14 @@ var titleText = Ti.UI.createLabel({
 
 var prevText = Ti.UI.createLabel({
 	text: "Previous",
-	color: "#000",
+	color: "#fff",
 	font: {fontSize: 14, fontFamily: "Arial"},
 	center: prevView
 });
 
 var nextText = Ti.UI.createLabel({
 	text: "Next",
-	color: "#000",
+	color: "#fff",
 	font: {fontSize: 14, fontFamily: "Arial"},
 	center: nextView
 });

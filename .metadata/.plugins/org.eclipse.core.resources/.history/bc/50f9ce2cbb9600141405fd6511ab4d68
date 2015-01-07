@@ -31,18 +31,7 @@ var mainView = Ti.UI.createView({
 	top: titleView.top + titleView.height + 5,
 	left:20,
 	right: 20,
-	height:400
-});
-
-var prevView = Ti.UI.createView({
-	backgroundColor: "#5FFB17",
-	borderRadius: 5,
-	borderWidth: 1,
-	borderColor: "#000",
-	top: mainView.top + mainView.height + 5,
-	bottom:20,
-	left: 20,
-	width: "42%"
+	height:300
 });
 
 var nextView = Ti.UI.createView({
@@ -50,10 +39,10 @@ var nextView = Ti.UI.createView({
 	borderRadius: 5,
 	borderWidth: 1,
 	borderColor: "#000",
-	top: mainView.top + mainView.height + 5,
+	top: mainView.top+5,
 	bottom:20,
-	right: 20,
-	width: "42%"
+	left: 15,
+	width: "30%"
 });
 
 var titleText = Ti.UI.createLabel({
@@ -63,22 +52,6 @@ var titleText = Ti.UI.createLabel({
 	center: titleView
 });
 
-var prevText = Ti.UI.createLabel({
-	text: "Previous",
-	color: "#000",
-	font: {fontSize: 14, fontFamily: "Arial"},
-	center: prevView
-});
-
-var nextText = Ti.UI.createLabel({
-	text: "Next",
-	color: "#000",
-	font: {fontSize: 14, fontFamily: "Arial"},
-	center: nextView
-});
-
 titleView.add(titleText);
-prevView.add(prevText);
-nextView.add(nextText);
-mainWindow.add(titleView, mainView, nextView, prevView);
+mainWindow.add(titleView, mainView, nextView);
 mainWindow.open();
