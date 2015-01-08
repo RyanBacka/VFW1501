@@ -4,7 +4,7 @@
 
 Ti.UI.setBackgroundColor("#000");
 
-var movies = ["I am Legend","Rundown","Boondock Saints","Matrix"];
+var moviesArray = ["I am Legend","Rundown","Boondock Saints","Matrix"];
 
 var mainWindow = Ti.UI.createWindow({
 	backgroundColor: "#fff",
@@ -83,16 +83,11 @@ var nextText = Ti.UI.createLabel({
 	font: {fontSize: 14, fontFamily: "Arial"},
 	center: nextView
 });
-var changeText = function(){
-	mainText.hide();
-	for (i=0, j=movies.length; i<j; i++){
-		var newMainText = Ti.UI.createLabel({
-			text: movies[i],
-			font: {fontSize: 14, fontFamily: "Arial"},
-			center: mainView
-		});
+
+for (i=0, j=moviesArray.length; i<j; i++){
+	var changeText = function(){
+		mainText.text = moviesArray[i];
 	};
-	mainView.add(newMainText);
 };
 
 prevView.addEventListener("click", changeText);

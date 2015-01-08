@@ -4,10 +4,9 @@
 
 Ti.UI.setBackgroundColor("#000");
 
-var movies = ["I am Legend","Rundown","Boondock Saints","Matrix"];
-
 var mainWindow = Ti.UI.createWindow({
 	backgroundColor: "#fff",
+	backgroundImage: "iphone/Default.png",
 	backgroundRepeat: true,
 	title: "My First Window"
 });
@@ -20,8 +19,8 @@ var titleView = Ti.UI.createView({
 	//width: 100,
 	height: 40,
 	top: 20,
-	left: 20,
-	right: 20
+	left: 10,
+	right: 10
 });
 
 var mainView = Ti.UI.createView({
@@ -64,12 +63,6 @@ var titleText = Ti.UI.createLabel({
 	center: titleView
 });
 
-var mainText = Ti.UI.createLabel({
-	text: "Here is my list of favorite movies! Click next to start.",
-	font: {fontSize: 14},
-	center: mainView
-});
-
 var prevText = Ti.UI.createLabel({
 	text: "Previous",
 	color: "#000",
@@ -83,22 +76,8 @@ var nextText = Ti.UI.createLabel({
 	font: {fontSize: 14, fontFamily: "Arial"},
 	center: nextView
 });
-var changeText = function(){
-	mainText.hide();
-	for (i=0, j=movies.length; i<j; i++){
-		var newMainText = Ti.UI.createLabel({
-			text: movies[i],
-			font: {fontSize: 14, fontFamily: "Arial"},
-			center: mainView
-		});
-	};
-	mainView.add(newMainText);
-};
 
-prevView.addEventListener("click", changeText);
-nextView.addEventListener("click", changeText);
 titleView.add(titleText);
-mainView.add(mainText);
 prevView.add(prevText);
 nextView.add(nextText);
 mainWindow.add(titleView, mainView, nextView, prevView);

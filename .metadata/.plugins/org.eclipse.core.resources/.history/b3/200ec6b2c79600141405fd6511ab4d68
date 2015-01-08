@@ -85,6 +85,7 @@ var nextText = Ti.UI.createLabel({
 });
 var changeText = function(){
 	mainText.hide();
+	mainText=null;
 	for (i=0, j=movies.length; i<j; i++){
 		var newMainText = Ti.UI.createLabel({
 			text: movies[i],
