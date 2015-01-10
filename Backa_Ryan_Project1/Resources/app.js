@@ -84,7 +84,7 @@ var prevText = Ti.UI.createLabel({
 	center: prevView
 });
 //load the function js file
-var loadFile = require("function");
+var loadFile = require('TaskWindow');
 //main code used to run the application
 mainWindow.add(titleView, mainView, nextView, loadFile);
 mainView.add(mainText);
