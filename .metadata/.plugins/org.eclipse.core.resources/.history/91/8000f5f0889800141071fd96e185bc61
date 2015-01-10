@@ -35,17 +35,6 @@ var mainView = Ti.UI.createView({
 	height:400
 });
 
-var nextView = Ti.UI.createView({
-	backgroundColor: "#5FFB17",
-	borderRadius: 5,
-	borderWidth: 1,
-	borderColor: "#000",
-	top: mainView.top + mainView.height + 5,
-	bottom:20,
-	right: 20,
-	width: "42%"
-});
-
 var prevView = Ti.UI.createView({
 	backgroundColor: "#5FFB17",
 	borderRadius: 5,
@@ -54,6 +43,17 @@ var prevView = Ti.UI.createView({
 	top: mainView.top + mainView.height + 5,
 	bottom:20,
 	left: 20,
+	width: "42%"
+});
+
+var nextView = Ti.UI.createView({
+	backgroundColor: "#5FFB17",
+	borderRadius: 5,
+	borderWidth: 1,
+	borderColor: "#000",
+	top: mainView.top + mainView.height + 5,
+	bottom:20,
+	right: 20,
 	width: "42%"
 });
 
@@ -70,13 +70,6 @@ var mainText = Ti.UI.createLabel({
 	center: mainView
 });
 
-var nextText = Ti.UI.createLabel({
-	text: "Next",
-	color: "#000",
-	font: {fontSize: 14, fontFamily: "Arial"},
-	center: nextView
-});
-
 var prevText = Ti.UI.createLabel({
 	text: "Previous",
 	color: "#000",
@@ -84,14 +77,20 @@ var prevText = Ti.UI.createLabel({
 	center: prevView
 });
 
-var loadFile = require("function");
+var nextText = Ti.UI.createLabel({
+	text: "Next",
+	color: "#000",
+	font: {fontSize: 14, fontFamily: "Arial"},
+	center: nextView
+});
 
-mainWindow.add(titleView, mainView, nextView, loadFile);
+var loadFile = require("movies");
+
 prevView.addEventListener("click", prevFnc);
 nextView.addEventListener("click", nextFnc);
 titleView.add(titleText);
 mainView.add(mainText);
 prevView.add(prevText);
 nextView.add(nextText);
-
+mainWindow.add(titleView, mainView, nextView);
 mainWindow.open();
