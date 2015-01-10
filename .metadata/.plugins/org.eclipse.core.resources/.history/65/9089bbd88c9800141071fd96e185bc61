@@ -5,7 +5,8 @@
 Ti.UI.setBackgroundColor("#000");
 //global variables
 var counter = 0;	
-
+var movies = ["I am Legend","Rundown","Boondock Saints","Matrix","Wedding Crashers","Happy Gilmore"];
+var i = movies.length;
 //creation of the main window
 var mainWindow = Ti.UI.createWindow({
 	backgroundColor: "#fff",
@@ -19,7 +20,7 @@ var titleView = Ti.UI.createView({
 	borderWidth: 1,
 	borderColor: "#000",
 	//width: 100,
-	height:20,
+	height: "10%",
 	top: 20,
 	left: 20,
 	right: 20
@@ -30,8 +31,8 @@ var mainView = Ti.UI.createView({
 	borderRadius: 5,
 	borderWidth: 1,
 	borderColor: "#000",
+	height: "50%",
 	top: titleView.top + titleView.height + 5,
-	
 	left:20,
 	right: 20,
 	height:400
@@ -42,6 +43,7 @@ var nextView = Ti.UI.createView({
 	borderRadius: 5,
 	borderWidth: 1,
 	borderColor: "#000",
+	height:"30%",
 	top: mainView.top + mainView.height + 5,
 	bottom:20,
 	right: 20,
@@ -53,6 +55,7 @@ var prevView = Ti.UI.createView({
 	borderRadius: 5,
 	borderWidth: 1,
 	borderColor: "#000",
+	height: "30%"
 	top: mainView.top + mainView.height + 5,
 	bottom:20,
 	left: 20,
@@ -67,7 +70,7 @@ var titleText = Ti.UI.createLabel({
 });
 //text for main box
 var mainText = Ti.UI.createLabel({
-	text: "My favorite movies! Click next to start",
+	text: movies[0],
 	font: {fontSize: 14},
 	center: mainView
 });
@@ -85,10 +88,54 @@ var prevText = Ti.UI.createLabel({
 	font: {fontSize: 14, fontFamily: "Arial"},
 	center: prevView
 });
+//function for the next button
+var nextFnc = function(){
+	mainText.hide();
+	if(counter<i){
+		counter=counter+1;
+		var nextMainText = Ti.UI.createLabel({
+			text: movies[counter],
+			font: {fontSize: 14},
+			center: mainView
+		});
+		mainView.add(nextMainText);
+	}else{
+		counter=0;
+		var nextMainText = Ti.UI.createLabel({
+			text: movies[counter],
+			font: {fontSize: 14},
+			center: mainView
+		});
+		mainView.add(nextMainText);
+	};
+	mainWindow.add(prevView);
+};
+//function for the prev button
+var prevFnc = function(){
+	mainText.hide();
+	if(counter<i){
+		counter=counter-1;
+		var prevMainText = Ti.UI.createLabel({
+			text: movies[counter],
+			font: {fontSize: 14},
+			center: mainView
+		});
+		mainView.add(prevMainText);
+	}else{
+		counter=4;
+		var prevMainText = Ti.UI.createLabel({
+			text: movies[counter],
+			font: {fontSize: 14},
+			center: mainView
+		});
+		mainView.add(prevMainText);
+	};
+};
 
-var loadFile = require("Functions");
 
 //main code used to run the application
+prevView.addEventListener("click", prevFnc);
+nextView.addEventListener("click", nextFnc);
 mainView.add(mainText);
 titleView.add(titleText);
 prevView.add(prevText);
