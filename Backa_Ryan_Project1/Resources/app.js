@@ -3,7 +3,7 @@
 //Project 1
 
 Ti.UI.setBackgroundColor("#000");
-//global variables
+//global variable
 var counter = 0;	
 
 //creation of the main window
@@ -12,6 +12,7 @@ var mainWindow = Ti.UI.createWindow({
 	backgroundRepeat: true,
 	title: "My First Window"
 });
+
 //creation of the title box
 var titleView = Ti.UI.createView({
 	backgroundColor: "#333",
@@ -24,6 +25,7 @@ var titleView = Ti.UI.createView({
 	left: 20,
 	right: 20
 });
+
 //creation of the main box
 var mainView = Ti.UI.createView({
 	backgroundColor: "#bdbdbd",
@@ -36,6 +38,7 @@ var mainView = Ti.UI.createView({
 	right: 20,
 	height:400
 });
+
 //creation of the next button
 var nextView = Ti.UI.createView({
 	backgroundColor: "#5FFB17",
@@ -47,6 +50,7 @@ var nextView = Ti.UI.createView({
 	right: 20,
 	width: "42%"
 });
+
 //creation of the prev button
 var prevView = Ti.UI.createView({
 	backgroundColor: "#5FFB17",
@@ -58,6 +62,7 @@ var prevView = Ti.UI.createView({
 	left: 20,
 	width: "42%"
 });
+
 //text for title box
 var titleText = Ti.UI.createLabel({
 	text: "Project 1",
@@ -65,12 +70,14 @@ var titleText = Ti.UI.createLabel({
 	font: {fontSize: 14, fontFamily: "Arial"},
 	center: titleView
 });
+
 //text for main box
 var mainText = Ti.UI.createLabel({
 	text: "My favorite movies! Click next to start",
 	font: {fontSize: 14},
 	center: mainView
 });
+
 //text for next button
 var nextText = Ti.UI.createLabel({
 	text: "Next",
@@ -78,6 +85,7 @@ var nextText = Ti.UI.createLabel({
 	font: {fontSize: 14, fontFamily: "Arial"},
 	center: nextView
 });
+
 //text for prev button
 var prevText = Ti.UI.createLabel({
 	text: "Previous",

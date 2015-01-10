@@ -1,53 +1,97 @@
 var movies = ["I am Legend","Rundown","Boondock Saints","Matrix","Wedding Crashers","Happy Gilmore"];
 var i = movies.length;
+var nextMainText;
+var prevMainText;
 
 //function for the next button
 var nextFnc = function(){
-	mainText.hide();
+	mainView.hide();
 	if(counter<i){
 		counter=counter+1;
+		var nextMainView = Ti.UI.createView({
+				backgroundColor: "#bdbdbd",
+				borderRadius: 5,
+				borderWidth: 1,
+				borderColor: "#000",
+				top: titleView.top + titleView.height + 5,
+				left:20,
+				right: 20,
+				height:400
+		});
 		var nextMainText = Ti.UI.createLabel({
 			text: movies[counter],
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.remove(nextMainText);
-		mainView.add(nextMainText);
+		nextMainView.add(nextMainText);
+		mainWindow.add(nextMainView);
 	}else{
 		counter=0;
+		var nextMainView = Ti.UI.createView({
+				backgroundColor: "#bdbdbd",
+				borderRadius: 5,
+				borderWidth: 1,
+				borderColor: "#000",
+				top: titleView.top + titleView.height + 5,
+				left:20,
+				right: 20,
+				height:400
+		});
 		var nextMainText = Ti.UI.createLabel({
 			text: movies[counter],
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.remove(nextMainText);
-		mainView.add(nextMainText);
+		nextMainView.add(nextMainText);
+		mainWindow.add(nextMainView);
 	};
 	mainWindow.add(prevView);
 };
+
 //function for the prev button
 var prevFnc = function(){
 	mainText.hide();
 	if(counter>=0){
 		counter=counter-1;
+		var prevMainView = Ti.UI.createView({
+				backgroundColor: "#bdbdbd",
+				borderRadius: 5,
+				borderWidth: 1,
+				borderColor: "#000",
+				top: titleView.top + titleView.height + 5,
+				left:20,
+				right: 20,
+				height:400
+		});
 		var prevMainText = Ti.UI.createLabel({
 			text: movies[counter],
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.remove(prevMainText);
-		mainView.add(prevMainText);
+		prevMainView.add(prevMainText);
+		mainWindow.add(prevMainView);
 	}else{
 		counter=4;
+		var prevMainView = Ti.UI.createView({
+				backgroundColor: "#bdbdbd",
+				borderRadius: 5,
+				borderWidth: 1,
+				borderColor: "#000",
+				top: titleView.top + titleView.height + 5,
+				left:20,
+				right: 20,
+				height:400
+		});
 		var prevMainText = Ti.UI.createLabel({
 			text: movies[counter],
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.remove(prevMainText);
-		mainView.add(prevMainText);
+		prevMainView.add(prevMainText);
+		mainWindow.add(prevMainView);
 	};
 };
 
+//event listeners
 prevView.addEventListener("click", prevFnc);
 nextView.addEventListener("click", nextFnc);
