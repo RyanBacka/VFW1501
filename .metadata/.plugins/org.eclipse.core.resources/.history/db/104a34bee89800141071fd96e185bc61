@@ -52,8 +52,7 @@ var nextFnc = function(){
 //function for the prev button
 var prevFnc = function(){
 	mainText.hide();
-	if(counter>0){
-		counter=counter-1;
+	if(counter>=0){
 		var prevMainView = Ti.UI.createView({
 				backgroundColor: "#bdbdbd",
 				borderRadius: 5,
@@ -69,6 +68,7 @@ var prevFnc = function(){
 			font: {fontSize: 14},
 			center: mainView
 		});
+		counter=counter-1;
 		prevMainView.add(prevMainText);
 		mainWindow.add(prevMainView);
 	}else{

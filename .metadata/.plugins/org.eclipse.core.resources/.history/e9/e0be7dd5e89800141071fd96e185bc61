@@ -52,7 +52,7 @@ var nextFnc = function(){
 //function for the prev button
 var prevFnc = function(){
 	mainText.hide();
-	if(counter>0){
+	if(counter>=0){
 		counter=counter-1;
 		var prevMainView = Ti.UI.createView({
 				backgroundColor: "#bdbdbd",
