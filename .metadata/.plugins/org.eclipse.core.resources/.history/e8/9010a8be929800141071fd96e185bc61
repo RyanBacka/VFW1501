@@ -11,7 +11,6 @@ var nextFnc = function(){
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.remove(nextMainText);
 		mainView.add(nextMainText);
 	}else{
 		counter=0;
@@ -20,7 +19,6 @@ var nextFnc = function(){
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.remove(nextMainText);
 		mainView.add(nextMainText);
 	};
 	mainWindow.add(prevView);
@@ -35,7 +33,6 @@ var prevFnc = function(){
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.remove(prevMainText);
 		mainView.add(prevMainText);
 	}else{
 		counter=4;
@@ -44,7 +41,6 @@ var prevFnc = function(){
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.remove(prevMainText);
 		mainView.add(prevMainText);
 	};
 };

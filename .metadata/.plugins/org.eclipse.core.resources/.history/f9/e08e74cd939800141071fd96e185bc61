@@ -12,7 +12,7 @@ var nextFnc = function(){
 			center: mainView
 		});
 		mainView.remove(nextMainText);
-		mainView.add(nextMainText);
+		nextMainView.add(mainText);
 	}else{
 		counter=0;
 		var nextMainText = Ti.UI.createLabel({

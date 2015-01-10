@@ -6,13 +6,12 @@ var nextFnc = function(){
 	mainText.hide();
 	if(counter<i){
 		counter=counter+1;
-		var nextMainText = Ti.UI.createLabel({
+		var mainText = Ti.UI.createLabel({
 			text: movies[counter],
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.remove(nextMainText);
-		mainView.add(nextMainText);
+		mainView.add(mainText);
 	}else{
 		counter=0;
 		var nextMainText = Ti.UI.createLabel({
@@ -20,7 +19,6 @@ var nextFnc = function(){
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.remove(nextMainText);
 		mainView.add(nextMainText);
 	};
 	mainWindow.add(prevView);
@@ -35,7 +33,6 @@ var prevFnc = function(){
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.remove(prevMainText);
 		mainView.add(prevMainText);
 	}else{
 		counter=4;
@@ -44,7 +41,6 @@ var prevFnc = function(){
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.remove(prevMainText);
 		mainView.add(prevMainText);
 	};
 };

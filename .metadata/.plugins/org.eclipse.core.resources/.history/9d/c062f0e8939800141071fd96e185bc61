@@ -11,6 +11,7 @@ var nextFnc = function(){
 			font: {fontSize: 14},
 			center: mainView
 		});
+		
 		mainView.remove(nextMainText);
 		mainView.add(nextMainText);
 	}else{
