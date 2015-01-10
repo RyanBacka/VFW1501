@@ -87,7 +87,7 @@ var nextText = Ti.UI.createLabel({
 });
 
 var nextFnc = function(){
-	mainText.hide();
+	mainText.hide;
 	if(counter<movies.length){
 		counter=counter++;
 		var nextMainText = Ti.UI.createLabel({
@@ -108,7 +108,7 @@ var nextFnc = function(){
 };
 
 var prevFnc = function(){
-	mainText.hide();
+	mainText.hide;
 	if(counter<movies.length){
 		counter=counter--;
 		var prevMainText = Ti.UI.createLabel({

@@ -87,7 +87,7 @@ var nextText = Ti.UI.createLabel({
 });
 
 var nextFnc = function(){
-	mainText.hide();
+	
 	if(counter<movies.length){
 		counter=counter++;
 		var nextMainText = Ti.UI.createLabel({
@@ -95,38 +95,18 @@ var nextFnc = function(){
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.add(nextMainText);
+		mainView.add(mainNextText);
 	}else{
 		var nextMainText = Ti.UI.createLabel({
 			text: movies[0],
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.add(nextMainText);
-	};
-	mainWindow.add(prevView);
-};
-
-var prevFnc = function(){
-	mainText.hide();
-	if(counter<movies.length){
-		counter=counter--;
-		var prevMainText = Ti.UI.createLabel({
-			text: movies[counter],
-			font: {fontSize: 14},
-			center: mainView
-		});
-		mainView.add(prevNextText);
-	}else{
-		var prevMainText = Ti.UI.createLabel({
-			text: movies[0],
-			font: {fontSize: 14},
-			center: mainView
-		});
-		mainView.add(prevMainText);
+		mainView.add(mainNextText);
 	};
 	
 };
+
 
 prevView.addEventListener("click", prevFnc);
 nextView.addEventListener("click", nextFnc);
