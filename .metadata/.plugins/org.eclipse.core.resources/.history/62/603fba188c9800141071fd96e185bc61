@@ -132,12 +132,11 @@ var prevFnc = function(){
 //load the function js file
 var loadFile = require("TaskWindow");
 //main code used to run the application
-prevView.addEventListener("click", prevFnc);
-nextView.addEventListener("click", nextFnc);
+mainWindow.add(titleView, mainView, nextView, loadFile);
 mainView.add(mainText);
 titleView.add(titleText);
 prevView.add(prevText);
 nextView.add(nextText);
-mainWindow.add(titleView, mainView, nextView);
+prevView.addEventListener("click", prevFnc);
+nextView.addEventListener("click", nextFnc);
 mainWindow.open();
-

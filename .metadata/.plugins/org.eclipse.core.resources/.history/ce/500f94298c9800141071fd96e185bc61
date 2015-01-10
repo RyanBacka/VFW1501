@@ -134,10 +134,9 @@ var loadFile = require("TaskWindow");
 //main code used to run the application
 prevView.addEventListener("click", prevFnc);
 nextView.addEventListener("click", nextFnc);
+mainWindow.add(titleView, mainView, nextView);
 mainView.add(mainText);
 titleView.add(titleText);
 prevView.add(prevText);
 nextView.add(nextText);
-mainWindow.add(titleView, mainView, nextView);
 mainWindow.open();
-
