@@ -4,7 +4,9 @@
 
 Ti.UI.setBackgroundColor("#000");
 
-var movies = ["I am Legend","Rundown","Boondock Saints","Matrix"];
+var counter = 0;
+	
+var movies = ["I am Legend","Rundown","Boondock Saints","Matrix","Wedding Crashers","Happy Gilmore"];
 
 var mainWindow = Ti.UI.createWindow({
 	backgroundColor: "#fff",
@@ -65,7 +67,7 @@ var titleText = Ti.UI.createLabel({
 });
 
 var mainText = Ti.UI.createLabel({
-	text: "Here is my list of favorite movies! Click next to start.",
+	text: movies[0],
 	font: {fontSize: 14},
 	center: mainView
 });
@@ -83,23 +85,60 @@ var nextText = Ti.UI.createLabel({
 	font: {fontSize: 14, fontFamily: "Arial"},
 	center: nextView
 });
-var changeText = function(){
-	mainText.hide();
-	for (i=0, j=movies.length; i<j; i++){
-		var newMainText = Ti.UI.createLabel({
-			text: movies[i],
-			font: {fontSize: 14, fontFamily: "Arial"},
+
+var nextFnc = function(){
+	mainText.hide;
+	prevMainText.hide;
+	nextMainText.hide;
+	mainText=null;
+	if(counter<movies.length){
+		counter=counter++;
+		var nextMainText = Ti.UI.createLabel({
+			text: movies[counter],
+			font: {fontSize: 14},
 			center: mainView
 		});
+		mainView.add(nextMainText);
+	}else{
+		var nextMainText = Ti.UI.createLabel({
+			text: movies[0],
+			font: {fontSize: 14},
+			center: mainView
+		});
+		mainView.add(nextMainText);
 	};
-	mainView.add(newMainText);
+	
 };
 
-prevView.addEventListener("click", changeText);
-nextView.addEventListener("click", changeText);
+var prevFnc = function(){
+	mainText.hide;
+	prevMainText.hide;
+	nextMainText.hide;
+	mainText=null;
+	if(counter<movies.length){
+		counter=counter--;
+		var prevMainText = Ti.UI.createLabel({
+			text: movies[counter],
+			font: {fontSize: 14},
+			center: mainView
+		});
+		mainView.add(prevNextText);
+	}else{
+		var prevMainText = Ti.UI.createLabel({
+			text: movies[0],
+			font: {fontSize: 14},
+			center: mainView
+		});
+		mainView.add(prevMainText);
+	};
+	
+};
+
+prevView.addEventListener("click", prevFnc);
+nextView.addEventListener("click", nextFnc);
 titleView.add(titleText);
 mainView.add(mainText);
 prevView.add(prevText);
 nextView.add(nextText);
-mainWindow.add(titleView, mainView, nextView, prevView);
+mainWindow.add(titleView, mainView, nextView);
 mainWindow.open();
