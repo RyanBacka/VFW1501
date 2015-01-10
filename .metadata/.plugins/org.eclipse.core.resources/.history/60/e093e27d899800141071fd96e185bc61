@@ -1,6 +1,6 @@
 var counter = 0;	
 var i = movies.length;
-//function for the next button
+
 var nextFnc = function(){
 	mainText.hide();
 	if(counter<i){
@@ -22,7 +22,7 @@ var nextFnc = function(){
 	};
 	mainWindow.add(prevView);
 };
-//function for the prev button
+
 var prevFnc = function(){
 	mainText.hide();
 	if(counter<i){
