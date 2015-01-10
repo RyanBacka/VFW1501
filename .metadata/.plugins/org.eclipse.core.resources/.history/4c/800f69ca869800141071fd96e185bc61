@@ -95,15 +95,18 @@ var nextFnc = function(){
 			font: {fontSize: 14},
 			center: mainView
 		});
+		mainView.hide;
 		mainView.add(nextMainText);
+		mainWindow.add(mainView);
 	}else{
-		counter=0;
 		var nextMainText = Ti.UI.createLabel({
-			text: movies[counter],
+			text: movies[0],
 			font: {fontSize: 14},
 			center: mainView
 		});
+		mainView.hide();
 		mainView.add(nextMainText);
+		mainWindow.add(mainView);
 	};
 	mainWindow.add(prevView);
 };
@@ -117,15 +120,18 @@ var prevFnc = function(){
 			font: {fontSize: 14},
 			center: mainView
 		});
+		mainView.hide();
 		mainView.add(prevMainText);
+		mainWindow.add(mainView);
 	}else{
-		counter=4;
 		var prevMainText = Ti.UI.createLabel({
-			text: movies[counter],
+			text: movies[0],
 			font: {fontSize: 14},
 			center: mainView
 		});
+		mainView.add();
 		mainView.add(prevMainText);
+		mainWindow.add(mainView);
 	};
 	
 };

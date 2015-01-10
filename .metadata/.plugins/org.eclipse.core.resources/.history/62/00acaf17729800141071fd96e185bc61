@@ -4,9 +4,9 @@
 
 Ti.UI.setBackgroundColor("#000");
 
-var counter = 0;	
+var counter = 0;
+	
 var movies = ["I am Legend","Rundown","Boondock Saints","Matrix","Wedding Crashers","Happy Gilmore"];
-var i = movies.length;
 
 var mainWindow = Ti.UI.createWindow({
 	backgroundColor: "#fff",
@@ -88,8 +88,8 @@ var nextText = Ti.UI.createLabel({
 
 var nextFnc = function(){
 	mainText.hide();
-	if(counter<i){
-		counter=counter+1;
+	if(counter<movies.length){
+		counter=counter++;
 		var nextMainText = Ti.UI.createLabel({
 			text: movies[counter],
 			font: {fontSize: 14},
@@ -97,9 +97,8 @@ var nextFnc = function(){
 		});
 		mainView.add(nextMainText);
 	}else{
-		counter=0;
 		var nextMainText = Ti.UI.createLabel({
-			text: movies[counter],
+			text: movies[0],
 			font: {fontSize: 14},
 			center: mainView
 		});
@@ -110,18 +109,17 @@ var nextFnc = function(){
 
 var prevFnc = function(){
 	mainText.hide();
-	if(counter<i){
-		counter=counter-1;
+	if(counter<movies.length){
+		counter=counter--;
 		var prevMainText = Ti.UI.createLabel({
 			text: movies[counter],
 			font: {fontSize: 14},
 			center: mainView
 		});
-		mainView.add(prevMainText);
+		mainView.add(prevNextText);
 	}else{
-		counter=4;
 		var prevMainText = Ti.UI.createLabel({
-			text: movies[counter],
+			text: movies[0],
 			font: {fontSize: 14},
 			center: mainView
 		});
