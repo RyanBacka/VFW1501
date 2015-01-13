@@ -1,5 +1,7 @@
 var movies = ["I am Legend","Rundown","Boondock Saints","Matrix","Wedding Crashers","Happy Gilmore"];
 var i = movies.length;
+var nextMainText;
+var prevMainText;
 i=i-1;
 
 //function for the next button
