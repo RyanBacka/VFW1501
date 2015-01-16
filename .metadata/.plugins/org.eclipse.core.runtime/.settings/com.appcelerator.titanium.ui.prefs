@@ -1,6 +1,8 @@
 =run
 Backa_Ryan_Project1\:launchMode=run
 Backa_Ryan_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.CEA0750C-198E-4459-B8B6-CB730573DF86
+Backa_Ryan_Project2\:launchMode=run
+Backa_Ryan_Project2\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.4CAC2C1A-3642-400B-9A94-D5180B558839
 LAST_LAUNCH_TIMESTAMP=1420683466702
 eclipse.preferences.version=1
 preference.show.console.onError=true
