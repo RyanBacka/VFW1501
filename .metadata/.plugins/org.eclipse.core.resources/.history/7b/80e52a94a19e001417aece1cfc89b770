@@ -37,56 +37,21 @@ var equipHeadText =Ti.UI.createLabel({
 equipHeader.add(equipHeadText);
 
 var equipFoot = Ti.UI.createView({
-	height:30,
-	backgroundColor: "#d8d8d8"
+	
 });
-
-var equipFootText = Ti.UI.createLabel({
-	text: loadFile.data.equipNames.footTitle,
-	font: {fontSize: 14, fontFamily: "Arial"},
-	color:"#fff"
-});
-
-equipFoot.add(equipFootText);
-
-var partsHeader = Ti.UI.createView({
-	height:50,
-	backgroundColor: "#d8d8d8"
-});
-
-var partsHeadText =Ti.UI.createLabel({
-	text: loadFile.data.equipParts.headTitle,
-	font: {fontSize: 14, fontFamily: "Arial"},
-	color:"#fff"
-});
-
-partsHeader.add(equipHeadText);
-
-var partsFoot = Ti.UI.createView({
-	height:30,
-	backgroundColor: "#d8d8d8"
-});
-
-var partsFootText = Ti.UI.createLabel({
-	text: loadFile.data.equipParts.footTitle,
-	font: {fontSize: 14, fontFamily: "Arial"},
-	color:"#fff"
-});
-
-partsFoot.add(partsFootText);
 
 var termsTable = Ti.UI.createTableView({
 	top: titleView.top+titleView.height
 });
 
 var equipmentSection = Ti.UI.createTableViewSection({
-	headerView: equipHeader,
-	footerView: equipFoot
+	headerView: tableHeader,
+	footerTitle: loadFile.data.equipNames.footTitle
 });
 
 var partsSection = Ti.UI.createTableViewSection({
-	headerView: partsHeader,
-	footerView: partsFoot
+	headerTitle: loadFile.data.equipParts.headTitle,
+	footerTitle: loadFile.data.equipParts.footTitle
 });
 
 var termsSections = [equipmentSection, partsSection];
@@ -109,6 +74,6 @@ for(var i=0, j=loadFile.data.equipNames.termsTest.length; i<j; i++){
 
 termsTable.setData(termsSections);
 
-titleView.add(titleText);
+titleView.add(TitelText);
 mainWindow.add(titleView, termsTable);
 mainWindow.open();

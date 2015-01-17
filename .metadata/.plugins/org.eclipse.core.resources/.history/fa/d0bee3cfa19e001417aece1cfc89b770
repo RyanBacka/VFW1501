@@ -60,7 +60,7 @@ var partsHeadText =Ti.UI.createLabel({
 	color:"#fff"
 });
 
-partsHeader.add(equipHeadText);
+equipHeader.add(equipHeadText);
 
 var partsFoot = Ti.UI.createView({
 	height:30,
@@ -80,12 +80,12 @@ var termsTable = Ti.UI.createTableView({
 });
 
 var equipmentSection = Ti.UI.createTableViewSection({
-	headerView: equipHeader,
+	headerView: equipHead,
 	footerView: equipFoot
 });
 
 var partsSection = Ti.UI.createTableViewSection({
-	headerView: partsHeader,
+	headerView: partsHead,
 	footerView: partsFoot
 });
 
@@ -109,6 +109,6 @@ for(var i=0, j=loadFile.data.equipNames.termsTest.length; i<j; i++){
 
 termsTable.setData(termsSections);
 
-titleView.add(titleText);
+titleView.add(TitelText);
 mainWindow.add(titleView, termsTable);
 mainWindow.open();

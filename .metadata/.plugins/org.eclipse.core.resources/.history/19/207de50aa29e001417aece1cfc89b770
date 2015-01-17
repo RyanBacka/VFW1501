@@ -60,7 +60,7 @@ var partsHeadText =Ti.UI.createLabel({
 	color:"#fff"
 });
 
-partsHeader.add(equipHeadText);
+equipHeader.add(equipHeadText);
 
 var partsFoot = Ti.UI.createView({
 	height:30,
