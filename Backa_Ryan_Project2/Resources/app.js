@@ -11,12 +11,12 @@ var mainWindow = Ti.UI.createWindow({
 var titleView = Ti.UI.createView({
 	top: 20,
 	height: 40,
-	backgroundColor:"#bdbdbd"
+	backgroundColor:"#d8d8d8"
 });
 
 var titleText = Ti.UI.createLabel({
 	text: "Well Testing Equipment Terms and Definitions",
-	font: {fontSize: 14, fontFamily: "Arial"},
+	font: {fontSize: 14, fontFamily: "Arial", fontWeight: "bold"},
 	color: "#fff",
 	center: titleView
 });
@@ -25,7 +25,7 @@ var loadFile = require("JSON");
 
 var equipHeader = Ti.UI.createView({
 	height:50,
-	backgroundColor: "#d8d8d8"
+	backgroundColor: "#bdbdbd"
 });
 
 var equipHeadText =Ti.UI.createLabel({
@@ -51,7 +51,7 @@ equipFoot.add(equipFootText);
 
 var partsHeader = Ti.UI.createView({
 	height:50,
-	backgroundColor: "#d8d8d8"
+	backgroundColor: "#bdbdbd"
 });
 
 var partsHeadText =Ti.UI.createLabel({
@@ -96,18 +96,21 @@ var loadDesc = require("DescWindow");
 for(var i=0, j=loadFile.data.equipNames.termsTest.length; i<j; i++){
 	var row = Ti.UI.createTableViewRow({
 		title: loadFile.data.equipNames.termsTest[i].equip,
+		desc: loadFile.data.equipNames.termsTest[i].desc,
 		hasChild:true
 	});
 	equipmentSection.add(row);
-	row.addEventListener("click", definition);
+	row.addEventListener("click", loadDesc.definition);
 };
 
 for(var i=0, j=loadFile.data.equipNames.termsTest.length; i<j; i++){
 	var row = Ti.UI.createTableViewRow({
 		title:loadFile.data.equipParts.partsTest[i].equip,
+		desc:loadFile.data.equipParts.partsTest[i].desc,
 		hasChild:true
 	});
 	partsSection.add(row);
+	row.addEventListener("click", loadDesc.definition);
 };
 
 termsTable.setData(termsSections);
