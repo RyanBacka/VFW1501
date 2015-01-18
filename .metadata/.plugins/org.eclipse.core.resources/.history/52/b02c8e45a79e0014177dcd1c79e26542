@@ -91,15 +91,12 @@ var partsSection = Ti.UI.createTableViewSection({
 
 var termsSections = [equipmentSection, partsSection];
 
-var loadDesc = require("DescWindow");
-
 for(var i=0, j=loadFile.data.equipNames.termsTest.length; i<j; i++){
 	var row = Ti.UI.createTableViewRow({
 		title: loadFile.data.equipNames.termsTest[i].equip,
 		hasChild:true
 	});
 	equipmentSection.add(row);
-	row.addEventListener("click", definition);
 };
 
 for(var i=0, j=loadFile.data.equipNames.termsTest.length; i<j; i++){
