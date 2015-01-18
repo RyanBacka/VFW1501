@@ -1,13 +1,9 @@
-//function for the second window
 var definition = function(){
-	//creation of the second window
 	var descWindow = Ti.UI.createWindow({
 		backgroundColor: "fff",
 		backgroundRepeat: true,
 		title: "Definition"
 	});
-	
-	//title for the second window
 	var descTitleView = Ti.UI.createView({
 		top: 20,
 		height: 40,
@@ -21,7 +17,6 @@ var definition = function(){
 		center: titleView
 	});
 	
-	//text defining the terms from the first window
 	var descText = Ti.UI.createLabel({
 		text: this.desc,
 		font: {fontSize: 14, fontFamily: "Arial"},
@@ -31,7 +26,6 @@ var definition = function(){
 		right:10,
 	});
 	
-	//creation of the close button to go back to the main window
 	var closeButton = Ti.UI.createLabel({
 		text: "< Back",
 		backgroundColor:"#d8d8d8",
@@ -49,7 +43,6 @@ var definition = function(){
 	
 	closeButton.addEventListener("click", closeWindow);
 	
-	//the adding of each section to the second window and the opening of the second window
 	descTitleView.add(descTitleText);
 	descWindow.add(descTitleView, descText, closeButton);
 	descWindow.open();

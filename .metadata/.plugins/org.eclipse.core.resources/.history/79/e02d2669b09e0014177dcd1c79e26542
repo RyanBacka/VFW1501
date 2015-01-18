@@ -2,14 +2,12 @@
 //VFW1501
 //Project 2
 
-//create new window
 var mainWindow = Ti.UI.createWindow({
 	backgroundColor: "fff",
 	backgroundRepeat: true,
 	title: "Well Testing Equipment"
 });
 
-//creation of title 
 var titleView = Ti.UI.createView({
 	top: 20,
 	height: 40,
@@ -23,10 +21,8 @@ var titleText = Ti.UI.createLabel({
 	center: titleView
 });
 
-//load JSON file to app.js
 var loadFile = require("JSON");
 
-//creation of header and footer for both tables plus style for each
 var equipHeader = Ti.UI.createView({
 	height:50,
 	backgroundColor: "#bdbdbd"
@@ -79,7 +75,6 @@ var partsFootText = Ti.UI.createLabel({
 
 partsFoot.add(partsFootText);
 
-//creation of tables and sections
 var termsTable = Ti.UI.createTableView({
 	top: titleView.top+titleView.height
 });
@@ -96,10 +91,8 @@ var partsSection = Ti.UI.createTableViewSection({
 
 var termsSections = [equipmentSection, partsSection];
 
-//loading our file for our second window
 var loadDesc = require("DescWindow");
 
-//creation of rows in tabe plus events to each row
 for(var i=0, j=loadFile.data.equipNames.termsTest.length; i<j; i++){
 	var row = Ti.UI.createTableViewRow({
 		title: loadFile.data.equipNames.termsTest[i].equip,
@@ -120,10 +113,8 @@ for(var i=0, j=loadFile.data.equipNames.termsTest.length; i<j; i++){
 	row.addEventListener("click", loadDesc.definition);
 };
 
-//setting the data for the tables
 termsTable.setData(termsSections);
 
-//adding sections to the main window and the running of the main window
 titleView.add(titleText);
 mainWindow.add(titleView, termsTable);
 mainWindow.open();

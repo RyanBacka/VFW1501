@@ -1,4 +1,3 @@
-//JSON data and export to app.js
 var data = {
 		"equipNames":{
 			"headTitle":"Well Test Equipment",
