@@ -53,7 +53,7 @@ var gallery = function(){
 	var loadDisplay = require("display");
 	
 	galleryContainer.addEventListener("click", function(event){
-		loadDisplay.display(event.source.image);
+		loadDisplay.display(event.source.image)
 		//console.log(event.source.image);
 	});
 	

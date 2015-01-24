@@ -20,17 +20,14 @@ var gallery = function(){
 	});
 	
 	var galleryContainer = Ti.UI.createScrollView({
-		top:20,
+		top:0,
 		width:platWidth,
 		contentWidth: platWidth,
 		backgroundColor: "#B0b0b0",
 		height: platHeight-border.height-border.top,
 		showVerticalScrollIndicator: true,
-		layout:"horizontal",
-		bottom:35
+		layout:"horizontal"
 	});
-	
-	console.log(galleryContainer.height);
 	
 	/*var mainImageView = function(){
 		
@@ -50,33 +47,13 @@ var gallery = function(){
 		imageView.add(newImage);
 		galleryContainer.add(imageView);
 	};
-	var loadDisplay = require("display");
 	
 	galleryContainer.addEventListener("click", function(event){
-		loadDisplay.display(event.source.image);
+		
 		//console.log(event.source.image);
 	});
 	
-	//creation of the close button to go back to the main window
-	var closeButton = Ti.UI.createLabel({
-		text: "< Back",
-		backgroundColor:"#d8d8d8",
-		color:"#fff",
-		height:30,
-		font: {fontSize: 14, fontFamily: "Arial"},
-		width:"100%",
-		bottom:0,
-		textAlign:"center"
-	});
-	
-	var closeWindow = function(){
-		galleryWindow.close();
-	};
-	
-	closeButton.addEventListener("click", closeWindow);
-	
-	
-	galleryWindow.add(galleryContainer, border, closeButton);
+	galleryWindow.add(galleryContainer, border);
 	galleryWindow.open();
 };
 exports.gallery = gallery;

@@ -50,10 +50,9 @@ var gallery = function(){
 		imageView.add(newImage);
 		galleryContainer.add(imageView);
 	};
-	var loadDisplay = require("display");
 	
 	galleryContainer.addEventListener("click", function(event){
-		loadDisplay.display(event.source.image);
+		getDetail(event.source.image)
 		//console.log(event.source.image);
 	});
 	

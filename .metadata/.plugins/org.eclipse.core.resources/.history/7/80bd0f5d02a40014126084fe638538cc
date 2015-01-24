@@ -27,7 +27,7 @@ var gallery = function(){
 		height: platHeight-border.height-border.top,
 		showVerticalScrollIndicator: true,
 		layout:"horizontal",
-		bottom:35
+		bottom:30
 	});
 	
 	console.log(galleryContainer.height);
@@ -50,10 +50,9 @@ var gallery = function(){
 		imageView.add(newImage);
 		galleryContainer.add(imageView);
 	};
-	var loadDisplay = require("display");
 	
 	galleryContainer.addEventListener("click", function(event){
-		loadDisplay.display(event.source.image);
+		
 		//console.log(event.source.image);
 	});
 	
