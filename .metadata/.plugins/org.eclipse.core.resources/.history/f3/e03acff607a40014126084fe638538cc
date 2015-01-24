@@ -1,6 +1,4 @@
-//creation of the gallery function
 var gallery = function(){
-	//global variables
 	var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "images");
 	var craftBrews = imagesFolder.getDirectoryListing();
 	var platWidth = Ti.Platform.displayCaps.platformWidth;
@@ -8,7 +6,6 @@ var gallery = function(){
 	var margin = 10;
 	var trueWidth = (platWidth - 50)/4;
 	
-	//creation of the gallery window and top border
 	var galleryWindow = Ti.UI.createWindow({
 		backgroundColor:"#fff",
 		title: "Home Screen",
@@ -22,7 +19,6 @@ var gallery = function(){
 		align:"top"
 	});
 	
-	//creation of the container for the gallery thumbnails
 	var galleryContainer = Ti.UI.createScrollView({
 		top:20,
 		width:platWidth,
@@ -34,7 +30,12 @@ var gallery = function(){
 		bottom:35
 	});
 	
-	//for loop creating the images and thmbnails for the gallery
+	console.log(galleryContainer.height);
+	
+	/*var mainImageView = function(){
+		
+	};*/
+	
 	for(var i=0;i<craftBrews.length; i++){
 		var imageView = Ti.UI.createView({
 			backgroundColor:"#e8e8e8",
@@ -49,13 +50,11 @@ var gallery = function(){
 		imageView.add(newImage);
 		galleryContainer.add(imageView);
 	};
-	
-	//loading of the display file/function
 	var loadDisplay = require("display");
 	
-	//adding event listener propagation to the gallery container
 	galleryContainer.addEventListener("click", function(event){
 		loadDisplay.display(event.source.image);
+		//console.log(event.source.image);
 	});
 	
 	//creation of the close button to go back to the main window
@@ -76,10 +75,8 @@ var gallery = function(){
 	
 	closeButton.addEventListener("click", closeWindow);
 	
-	//adding containers border and close button to the window and opening window
+	
 	galleryWindow.add(galleryContainer, border, closeButton);
 	galleryWindow.open();
 };
-
-//exporting the gallery function to the main window
 exports.gallery = gallery;

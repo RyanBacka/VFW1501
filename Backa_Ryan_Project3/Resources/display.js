@@ -39,10 +39,10 @@ var display = function(dataSource, platWidth){
 	
 	closeButton.addEventListener("click", closeWindow);
 	
-	//the adding of each section to the second window and the opening of the second window
+	//the adding of each section to the display window and the opening of the display window
 	imageView.add(newImage);
 	dispWindow.add(imageView, closeButton);
 	dispWindow.open();
 };
-
+//exporting the function to the gallery window
 exports.display = display;

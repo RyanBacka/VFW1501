@@ -2,16 +2,14 @@
 //VFW1501
 //Project 3
 
-//creation of the main window
 var mainWindow = Ti.UI.createWindow({
 	backgroundColor:"#fff",
 	title: "Home Screen",
 });
 
-//loading of the function file and gallery function
 var loadGallery = require("functions");
 
-//creation of the open gallery button
+//creation of the next button
 var openView = Ti.UI.createView({
 	backgroundColor: "#5FFB17",
 	borderRadius: 5,
@@ -22,7 +20,7 @@ var openView = Ti.UI.createView({
 	align:"center"
 });
 
-//text for open gallery button
+//text for next button
 var openText = Ti.UI.createLabel({
 	text: "Open Gallery",
 	color: "#000",
@@ -30,10 +28,9 @@ var openText = Ti.UI.createLabel({
 	center: openView
 });
 
-//adding event listener to the gallery button
-openView.addEventListener("click", loadGallery.gallery);
+var loadGallery = require("functions");
 
-//adding text to the open button, the open button to the window and opening the window
+openView.addEventListener("click", loadGallery.gallery);
 openView.add(openText);
 mainWindow.add(openView);
 mainWindow.open();
