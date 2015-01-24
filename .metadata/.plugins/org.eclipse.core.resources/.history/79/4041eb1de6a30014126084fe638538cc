@@ -1,0 +1,28 @@
+//Ryan Backa
+//VFW1501
+//Project 3
+
+var platWidth = Ti.Platform.displayCaps.platformWidth;
+var platHeight = Ti.Platform.displayCaps.platforHeight;
+var craftBrews = ["BelchinBeaver.jpeg","BigWood.jpeg","Bittereinder.jpg","boxingCat.jpg","breckenridge.jpg","Brooklyn.jpeg","Civilian.jpg","Daredevil.jpeg","DogfishHead.jpeg","Firefly.jpg","FlyingDog.jpeg"
+,"Founders.jpg","GreatDivide.jpg","Grist.jpeg","hangar24.jpeg","HighCotton.png","imbibe.jpg","Intuition.jpg","Jackalope.png","JaggedMountain.jpg","JesterKing.png","kona.jpg","MOtherEarth.jpg","NewBelgium.jpg",
+"NobleRey.jpg","Our.jpg","redhook.jpg","Shotwell.jpeg","Troegs.jpeg","University.jpeg"];
+var margin = 10;
+var trueWidth = (platWidth - 50)/4;
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor:"#fff",
+	layout: "horizontal"
+});
+
+var containerView = Ti.UI.createScrollView({
+	backgroundColor: "#003333",
+	height: 1,
+	width: platWidth,
+	contentWidth:platWidth,
+	top:20,
+	showVerticalScrollIndicator: true
+});
+
+mainWindow.add(containerView);
+mainWindow.open();

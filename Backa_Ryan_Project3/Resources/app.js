@@ -1,64 +1,56 @@
-// this sets the background color of the master UIView (when there are no windows/tab groups on it)
-Titanium.UI.setBackgroundColor('#000');
+//Ryan Backa
+//VFW1501
+//Project 3
 
-// create tab group
-var tabGroup = Titanium.UI.createTabGroup();
+var platWidth = Ti.Platform.displayCaps.platformWidth;
+var platHeight = Ti.Platform.displayCaps.platforHeight;
+var craftBrews = ["BelchinBeaver.jpeg","BigWood.jpeg","Bittereinder.jpg","boxingCat.jpg","breckenridge.jpg","Brooklyn.jpeg","Civilian.jpg","Daredevil.jpeg","DogfishHead.jpeg","Firefly.jpg","FlyingDog.jpeg"
+,"Founders.jpg","GreatDivide.jpg","Grist.jpeg","hangar24.jpeg","HighCotton.png","imbibe.jpg","Intuition.jpg","Jackalope.png","JaggedMountain.jpg","JesterKing.png","kona.jpg","MOtherEarth.jpg","NewBelgium.jpg",
+"NobleRey.jpg","Our.jpg","redhook.jpg","Shotwell.jpeg","Troegs.jpeg","University.jpeg"];
+var margin = 10;
+var trueWidth = (platWidth - 50)/4;
+//var size = trueWidth/craftBrews.length;
 
+//console.log(size);
+console.log(trueWidth);
 
-//
-// create base UI tab and root window
-//
-var win1 = Titanium.UI.createWindow({  
-    title:'Tab 1',
-    backgroundColor:'#fff'
-});
-var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
-    title:'Tab 1',
-    window:win1
-});
-
-var label1 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 1',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor:"#fff",
+	title: "Craft Brews",
+	layout: "horizontal"
 });
 
-win1.add(label1);
-
-//
-// create controls tab and root window
-//
-var win2 = Titanium.UI.createWindow({  
-    title:'Tab 2',
-    backgroundColor:'#fff'
-});
-var tab2 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
-    title:'Tab 2',
-    window:win2
+var border = Ti.UI.createView({
+	backgroundColor: "#ffffff",
+	height: 1,
+	width: platWidth,
+	top:20,
 });
 
-var label2 = Titanium.UI.createLabel({
-	color:'#999',
-	text:'I am Window 2',
-	font:{fontSize:20,fontFamily:'Helvetica Neue'},
-	textAlign:'center',
-	width:'auto'
+var galleryContainer = Ti.UI.createScrollView({
+	top:0,
+	width:platWidth,
+	contentWidth: platWidth,
+	backgroundColor: "#B0b0b0",
+	height: platHeight-border.height-border.top,
+	showVerticalScrollIndicator: true,
+	layout:"horizontal"
 });
 
-win2.add(label2);
+for(var i=0;i<craftBrews.length; i++){
+	var imageView = Ti.UI.createView({
+		backgroundColor:"#e8e8e8",
+		top:margin,
+		left:margin,
+		width:trueWidth,
+		height:trueWidth
+	});
+	var newImage = Ti.UI.createImageView({
+		image: "images/"+ craftBrews[i]
+	});
+	imageView.add(newImage);
+	galleryContainer.add(imageView);
+};
 
-
-
-//
-//  add tabs
-//
-tabGroup.addTab(tab1);  
-tabGroup.addTab(tab2);  
-
-
-// open tab group
-tabGroup.open();
+mainWindow.add(border, galleryContainer);
+mainWindow.open();
