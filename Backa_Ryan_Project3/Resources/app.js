@@ -1,23 +1,16 @@
 //Ryan Backa
 //VFW1501
 //Project 3
-
+var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "images");
+var craftBrews = imagesFolder.getDirectoryListing();
 var platWidth = Ti.Platform.displayCaps.platformWidth;
-var platHeight = Ti.Platform.displayCaps.platforHeight;
-var craftBrews = ["BelchinBeaver.jpeg","BigWood.jpeg","Bittereinder.jpg","boxingCat.jpg","breckenridge.jpg","Brooklyn.jpeg","Civilian.jpg","Daredevil.jpeg","DogfishHead.jpeg","Firefly.jpg","FlyingDog.jpeg"
-,"Founders.jpg","GreatDivide.jpg","Grist.jpeg","hangar24.jpeg","HighCotton.png","imbibe.jpg","Intuition.jpg","Jackalope.png","JaggedMountain.jpg","JesterKing.png","kona.jpg","MOtherEarth.jpg","NewBelgium.jpg",
-"NobleRey.jpg","Our.jpg","redhook.jpg","Shotwell.jpeg","Troegs.jpeg","University.jpeg"];
+var platHeight = Ti.Platform.displayCaps.platformHeight;
 var margin = 10;
 var trueWidth = (platWidth - 50)/4;
-//var size = trueWidth/craftBrews.length;
-
-//console.log(size);
-console.log(trueWidth);
 
 var mainWindow = Ti.UI.createWindow({
 	backgroundColor:"#fff",
 	title: "Craft Brews",
-	layout: "horizontal"
 });
 
 var border = Ti.UI.createView({
@@ -37,6 +30,10 @@ var galleryContainer = Ti.UI.createScrollView({
 	layout:"horizontal"
 });
 
+/*var mainImageView = function(){
+	
+};*/
+
 for(var i=0;i<craftBrews.length; i++){
 	var imageView = Ti.UI.createView({
 		backgroundColor:"#e8e8e8",
@@ -51,6 +48,9 @@ for(var i=0;i<craftBrews.length; i++){
 	imageView.add(newImage);
 	galleryContainer.add(imageView);
 };
+galleryContainer.addEventListener("click", function(event){
+	console.log(event.source.image);
+});
 
 mainWindow.add(border, galleryContainer);
 mainWindow.open();
