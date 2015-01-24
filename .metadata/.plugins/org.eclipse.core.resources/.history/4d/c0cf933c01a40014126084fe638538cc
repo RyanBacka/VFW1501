@@ -53,6 +53,5 @@ var gallery = function(){
 	});
 	
 	galleryWindow.add(border, galleryContainer);
-	galleryWindow.open();
 };
 exports.gallery = gallery;

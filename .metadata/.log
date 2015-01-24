@@ -430,3 +430,12 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/ryankbac
 !MESSAGE Failed to acquire lock for git repository.
 !SUBENTRY 1 com.aptana.git.core 4 0 2015-01-24 14:15:59.552
 !MESSAGE Failed to acquire lock for git repository.
+
+!ENTRY com.aptana.git.core 4 1 2015-01-24 14:18:03.294
+!MESSAGE Errors occurred while refreshing git index
+!SUBENTRY 1 com.aptana.git.core 4 0 2015-01-24 14:18:03.294
+!MESSAGE Failed to acquire lock for git repository.
+!SUBENTRY 1 com.aptana.git.core 4 0 2015-01-24 14:18:03.295
+!MESSAGE Failed to acquire lock for git repository.
+!SUBENTRY 1 com.aptana.git.core 4 0 2015-01-24 14:18:03.295
+!MESSAGE Failed to acquire lock for git repository.
