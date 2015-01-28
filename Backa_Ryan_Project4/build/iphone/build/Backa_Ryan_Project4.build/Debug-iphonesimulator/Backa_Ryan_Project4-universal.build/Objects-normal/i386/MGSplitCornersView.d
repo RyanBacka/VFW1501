@@ -1,0 +1,6 @@
+dependencies: \
+  /Users/ryankbacka/Desktop/VFW1501/Backa_Ryan_Project4/build/iphone/Classes/MGSplitView/MGSplitCornersView.m \
+  /Users/ryankbacka/Desktop/VFW1501/Backa_Ryan_Project4/build/iphone/Classes/TiBase.h \
+  /Users/ryankbacka/Desktop/VFW1501/Backa_Ryan_Project4/build/iphone/Classes/TiThreading.h \
+  /Users/ryankbacka/Desktop/VFW1501/Backa_Ryan_Project4/build/iphone/Classes/TiPublicAPI.h \
+  /Users/ryankbacka/Desktop/VFW1501/Backa_Ryan_Project4/build/iphone/Classes/MGSplitView/MGSplitCornersView.h
