@@ -3,7 +3,7 @@
 //Project 4
 
 var mainWin = Ti.UI.createWindow({
-	backgroundColor: "#fff",
+	backgroundColor: "#fff"
 	title:"My Favorite Craft Brews"
 });
 
@@ -13,9 +13,8 @@ var border = Ti.UI.createView({
 	backgroundColor:"#cccccc"
 });
 
-var dataView = Ti.UI.createView({
-	height:80,
-	width:"95%",
+var dataView = Ti.UI.creatView({
+	height:"20%",
 	top: border.height + 10,
 	borderRadius:5,
 	borderWidth:1,
@@ -25,13 +24,13 @@ var dataView = Ti.UI.createView({
 
 var dataText = Ti.UI.createLabel({
 	text:"Brew Data",
-	font: {fontSize:24, fontStyle: "bold", fontFamily: "Arial"}
+	//textColor: "#006633",
+	font: {fontSize:24, fontStyle: "bold", fontFamily: "Arial", fontColor:"#006633"}
 });
 	
 var randomView = Ti.UI.createView({
-	height: 80,
-	width:"95%",
-	top: dataView.top + dataView.height + 1,
+	height: "20%",
+	top: border.height + 10,
 	borderRadius:5,
 	borderWidth:1,
 	borderColor:"#000",
@@ -40,28 +39,14 @@ var randomView = Ti.UI.createView({
 
 var randomPicTxt = Ti.UI.createLabel({
 	text:"Random Brew",
-	font: {fontSize:24, fontStyle: "bold", fontFamily: "Arial"}
+	//textColor: "#666600",
+	font: {fontSize:24, fontStyle: "bold", fontFamily: "Arial", fontColor: "#666600"}
 });
-
-var infoView = Ti.UI.createView({
-	height: 80,
-	width:"95%",
-	top: dataView.top + dataView.height + 1,
-	borderRadius:5,
-	borderWidth:1,
-	borderColor:"#000",
-	backgroundColor:"#ccffcc"
-});
-
-var infoText = Ti.UI.createLabel({
-	text:"Craft Brew Info",
-	font: {fontSize:24, fontStyle: "bold", fontFamily: "Arial"}
-});	
+	
 	
 var loadBrew = require("craftbrew");
 	
 randomView.addEventListener("click", loadBrew.randomBrew);
-dataView.add(dataText);
 randomView.add(randomPicTxt);
-mainWin.add(border, randomView, dataView);
+mainWin.add(border, random.View);
 mainWin.open();
