@@ -24,7 +24,7 @@ var display = function(dataSource, platWidth){
 	//creation of the close button to go back to the gallery window
 	var closeButton = Ti.UI.createLabel({
 		text: "< Back",
-		backgroundColor:"#d8d8d8",
+		backgroundColor:"#000",
 		color:"#fff",
 		height:30,
 		font: {fontSize: 14, fontFamily: "Arial"},

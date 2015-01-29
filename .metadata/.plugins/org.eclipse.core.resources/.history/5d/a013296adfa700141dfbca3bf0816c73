@@ -1,0 +1,26 @@
+var randomBrew = function(){
+	var craftBrews = imagesFolder.getDirectoryListing();
+	var index = Math.round((craftBrews.length-1)*Math.random());
+	
+	var newWindow = Ti.UI.createWindow({
+		backgroundColor: "#fff"
+	});
+	
+	console.log(index);
+	
+	var imageContainer = Ti.UI.createView({
+		backgroundColor:"f0f8ff",
+		top:20
+	});
+
+	
+	var newImage = Ti.UI.createImageView({
+			image: "images/"+craftBrews[index]
+		});
+		
+	imageContainer.add(newImage);
+	newWindow.add(imageContainer);
+	newWindow.open();
+};
+
+exports.randomBrew = randomBrew;

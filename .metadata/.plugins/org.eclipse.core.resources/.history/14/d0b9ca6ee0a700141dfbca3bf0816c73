@@ -1,0 +1,30 @@
+// Ryan Backa
+//VFW 1501
+//Project 4
+
+var mainWin = Ti.UI.createWindow({
+	backgroundColor: "#fff"
+});
+
+var border = Ti.UI.createView({
+	top: 0,
+	height:20,
+	backgroundColor:"#cccccc"
+});
+
+
+var clickView = Ti.UI.createView({
+	height: "20%",
+	top: border.height + 10,
+	borderRadius:5,
+	borderWidth:1,
+	borderColor:"#ccffcc"
+});
+
+
+var loadBrew = require("craftbrew");
+
+clickView.addEventListener("click", loadBrew.randomBrew);
+
+mainWin.add(border,clickView);
+mainWin.open();
