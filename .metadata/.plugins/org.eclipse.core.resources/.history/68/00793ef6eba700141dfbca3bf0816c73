@@ -59,7 +59,7 @@ var infoText = Ti.UI.createLabel({
 });	
 
 var projText = Ti.UI.createLabel({
-	text:"VFW1501 // Ryan Backa",
+	text:"made by Ryan Backa",
 	font:{fontSize:10, fontStyle: "italics", fontFamily: "Anivers"},
 	bottom:10
 });

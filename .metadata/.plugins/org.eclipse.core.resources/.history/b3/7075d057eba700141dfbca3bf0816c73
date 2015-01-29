@@ -46,29 +46,22 @@ var randomPicTxt = Ti.UI.createLabel({
 var infoView = Ti.UI.createView({
 	height: 80,
 	width:"95%",
-	top: randomView.top + randomView.height + 1,
+	top: dataView.top + dataView.height + 1,
 	borderRadius:5,
 	borderWidth:1,
 	borderColor:"#000",
-	backgroundColor:"#33ccff"
+	backgroundColor:"#ccffcc"
 });
 
 var infoText = Ti.UI.createLabel({
 	text:"Craft Brew Info",
 	font: {fontSize:24, fontStyle: "bold", fontFamily: "Arial"}
 });	
-
-var projText = Ti.UI.createLabel({
-	text:"VFW1501 // Ryan Backa",
-	font:{fontSize:10, fontStyle: "italics", fontFamily: "Anivers"},
-	bottom:10
-});
 	
 var loadBrew = require("craftbrew");
 	
 randomView.addEventListener("click", loadBrew.randomBrew);
 dataView.add(dataText);
 randomView.add(randomPicTxt);
-infoView.add(infoText);
-mainWin.add(border, randomView, dataView, infoView, projText);
+mainWin.add(border, randomView, dataView);
 mainWin.open();
