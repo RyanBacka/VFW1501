@@ -9,7 +9,6 @@ var dataPage = function(){
 	//creation of header and footer for both tables plus style for each
 	var craftHeader = Ti.UI.createView({
 		height:50,
-		top:20,
 		backgroundColor: "#bdbdbd"
 	});
 	
@@ -23,7 +22,6 @@ var dataPage = function(){
 	
 	var craftFoot = Ti.UI.createView({
 		height:30,
-		bottom:20,
 		backgroundColor: "#d8d8d8"
 	});
 	
@@ -45,18 +43,18 @@ var dataPage = function(){
 		footerView: craftFoot
 	});
 	
-	var craftSections = loadFile.data.favBrew;
+	var craftSections = favBrew;
 	
 	//creation of rows in tabe plus events to each row
-	for(var i=0, j=loadFile.data.craftBrewNames.favBrew.length; i<j; i++){
+	for(var i=0, j=loadFile.data.equipNames.termsTest.length; i<j; i++){
 		var row = Ti.UI.createTableViewRow({
-			title: loadFile.data.craftBrewNames.favBrew[i],
+			title: loadFile.data.equipNames.termsTest[i].equip,
+			desc: loadFile.data.equipNames.termsTest[i].desc,
 			hasChild:true
 		});
-		craftSection.add(row);
+		equipmentSection.add(row);
+		row.addEventListener("click", loadDesc.definition);
 	};
-	dataWindow.add(craftHeader,craftFoot,craftSection);
-	dataWindow.open();
 };
 
 exports.dataPage = dataPage;

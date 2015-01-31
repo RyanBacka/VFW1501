@@ -63,14 +63,12 @@ var projText = Ti.UI.createLabel({
 	font:{fontSize:10, fontStyle: "italics", fontFamily: "Anivers"},
 	bottom:10
 });
-
-var loadData = require("brewdata");	
+	
 var loadBrew = require("craftbrew");
-
-dataView.addEventListener("click", loadData.dataPage);	
+	
 randomView.addEventListener("click", loadBrew.randomBrew);
 dataView.add(dataText);
-randomView.add(randomPicTxt); 
+randomView.add(randomPicTxt);
 infoView.add(infoText);
 mainWin.add(border, randomView, dataView, infoView, projText);
 mainWin.open();

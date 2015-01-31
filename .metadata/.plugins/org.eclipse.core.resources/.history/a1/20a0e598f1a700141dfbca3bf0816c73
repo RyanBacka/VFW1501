@@ -1,0 +1,71 @@
+//JSON data and export to app.js
+var data = {
+		"craftBrewNames":{
+			"headTitle":"My Four Favorite Craft Breweries",
+			"footTitle":"Craft beers and their alcohol content.",
+			"favBrew":[
+				{
+					"brew":[
+						{
+							"beer":"",
+							"alcCont":""
+						},{
+							"beer":"",
+							"alcCont":""
+						},{
+							"beer":"",
+							"alcCont":""
+						},{
+							"beer":"",
+							"alcCont":""
+						}]
+				},{
+					"brew2":[
+						{
+							"beer":"",
+							"alcCont":""
+						},{
+							"beer":"",
+							"alcCont":""
+						},{
+							"beer":"",
+							"alcCont":""
+						},{
+							"beer":"",
+							"alcCont":""
+						}]
+				},{
+					"brew3":[
+						{
+							"beer":"",
+							"alcCont":""
+						},{
+							"beer":"",
+							"alcCont":""
+						},{
+							"beer":"",
+							"alcCont":""
+						},{
+							"beer":"",
+							"alcCont":""
+						}]
+				},{
+					"brew4":[
+						{
+							"beer":"",
+							"alcCont":""
+						},{
+							"beer":"",
+							"alcCont":""
+						},{
+							"beer":"",
+							"alcCont":""
+						},{
+							"beer":"",
+							"alcCont":""
+						}]
+				}]
+		}
+};
+
+exports.data = data;

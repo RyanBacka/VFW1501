@@ -9,7 +9,6 @@ var dataPage = function(){
 	//creation of header and footer for both tables plus style for each
 	var craftHeader = Ti.UI.createView({
 		height:50,
-		top:20,
 		backgroundColor: "#bdbdbd"
 	});
 	
@@ -23,7 +22,6 @@ var dataPage = function(){
 	
 	var craftFoot = Ti.UI.createView({
 		height:30,
-		bottom:20,
 		backgroundColor: "#d8d8d8"
 	});
 	
@@ -37,26 +35,45 @@ var dataPage = function(){
 	
 	//creation of tables and sections
 	var brewTable = Ti.UI.createTableView({
-		top:20
+		top: titleView.top+titleView.height
 	});
 	
-	var craftSection = Ti.UI.createTableViewSection({
-		headerView: craftHeader,
-		footerView: craftFoot
+	var equipmentSection = Ti.UI.createTableViewSection({
+		headerView: equipHeader,
+		footerView: equipFoot
 	});
 	
-	var craftSections = loadFile.data.favBrew;
+	var partsSection = Ti.UI.createTableViewSection({
+		headerView: partsHeader,
+		footerView: partsFoot
+	});
+	
+	var termsSections = [equipmentSection, partsSection];
+	
+	//loading our file for our second window
+	var loadDesc = require("DescWindow");
 	
 	//creation of rows in tabe plus events to each row
-	for(var i=0, j=loadFile.data.craftBrewNames.favBrew.length; i<j; i++){
+	for(var i=0, j=loadFile.data.equipNames.termsTest.length; i<j; i++){
 		var row = Ti.UI.createTableViewRow({
-			title: loadFile.data.craftBrewNames.favBrew[i],
+			title: loadFile.data.equipNames.termsTest[i].equip,
+			desc: loadFile.data.equipNames.termsTest[i].desc,
 			hasChild:true
 		});
-		craftSection.add(row);
+		equipmentSection.add(row);
+		row.addEventListener("click", loadDesc.definition);
 	};
-	dataWindow.add(craftHeader,craftFoot,craftSection);
-	dataWindow.open();
+	
+	for(var i=0, j=loadFile.data.equipNames.termsTest.length; i<j; i++){
+		var row = Ti.UI.createTableViewRow({
+			title:loadFile.data.equipParts.partsTest[i].equip,
+			desc:loadFile.data.equipParts.partsTest[i].desc,
+			hasChild:true
+		});
+		partsSection.add(row);
+		row.addEventListener("click", loadDesc.definition);
+	};
+
 };
 
 exports.dataPage = dataPage;

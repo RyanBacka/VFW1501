@@ -9,7 +9,6 @@ var dataPage = function(){
 	//creation of header and footer for both tables plus style for each
 	var craftHeader = Ti.UI.createView({
 		height:50,
-		top:20,
 		backgroundColor: "#bdbdbd"
 	});
 	
@@ -23,7 +22,6 @@ var dataPage = function(){
 	
 	var craftFoot = Ti.UI.createView({
 		height:30,
-		bottom:20,
 		backgroundColor: "#d8d8d8"
 	});
 	
@@ -55,8 +53,7 @@ var dataPage = function(){
 		});
 		craftSection.add(row);
 	};
-	dataWindow.add(craftHeader,craftFoot,craftSection);
-	dataWindow.open();
+	dataWindow.add(craftHeader,craftFoot,craftSection)
 };
 
 exports.dataPage = dataPage;
