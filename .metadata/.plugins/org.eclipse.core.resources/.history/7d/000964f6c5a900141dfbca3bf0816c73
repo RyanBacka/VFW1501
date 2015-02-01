@@ -35,10 +35,20 @@ var info = function(){
 	});
 	
 	var submitButton = function(){
-		
+		console.log(infoField.value);
 		var textVal = infoField.value;
-		alert("You would like more information on "+textVal+" brewery. The creator will research and get back to you.");
+		alert("You would like more information on "+textVal+" brewery.");
 	};
+	
+	/*var submitView = Ti.UI.createView({
+		backgroundColor:"#5FFB17",
+		borderRadius:5,
+		borderWidth:1,
+		borderColor:"white",
+		height:50,
+		width:175,
+		top:infoField.top+infoField.height+10,
+	});*/
 	
 	var submitText = Ti.UI.createLabel({
 		text:"Submit",

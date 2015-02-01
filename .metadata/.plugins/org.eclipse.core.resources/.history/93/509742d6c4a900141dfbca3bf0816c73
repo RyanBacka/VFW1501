@@ -31,23 +31,33 @@ var info = function(){
 		top:infoField.top+infoField.height+10,
 		borderWidth:1,
 		borderRadius:5,
-		borderColor:"white",
+		borderColor:"white"
 	});
 	
-	var submitButton = function(){
+	/*var submitButton = function(infoField){
+		infoField.setValue;
+		console.log(infoField.value);
 		
-		var textVal = infoField.value;
-		alert("You would like more information on "+textVal+" brewery. The creator will research and get back to you.");
 	};
 	
+	var submitView = Ti.UI.createView({
+		backgroundColor:"#5FFB17",
+		borderRadius:5,
+		borderWidth:1,
+		borderColor:"white",
+		height:50,
+		width:175,
+		top:infoField.top+infoField.height+10,
+	});
+	
 	var submitText = Ti.UI.createLabel({
-		text:"Submit",
+		text:"submit",
 		align:"center"
 	});
 	
-	infoButton.addEventListener("click", submitButton);
+	submitView.addEventListener("click", submitButton);
 	
-	infoButton.add(submitText);
+	submitView.add(submitText);*/
 	infoView.add(infoText);
 	win.add(infoField,infoView,infoButton);
 	win.open();
