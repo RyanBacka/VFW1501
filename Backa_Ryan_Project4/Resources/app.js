@@ -66,9 +66,10 @@ var projText = Ti.UI.createLabel({
 
 var loadData = require("brewdata");	
 var loadBrew = require("craftbrew");
-
+var loadInfo = require("info");
 dataView.addEventListener("click", loadData.dataPage);	
 randomView.addEventListener("click", loadBrew.randomBrew);
+infoView.addEventListener("click", loadInfo.info);
 dataView.add(dataText);
 randomView.add(randomPicTxt); 
 infoView.add(infoText);

@@ -1,0 +1,32 @@
+var info = function(){
+var win = Ti.UI.createWindow({
+  backgroundColor: '#33ccff'
+});
+
+var textArea = Ti.UI.createTextArea({
+  borderWidth: 2,
+  borderColor: '#bbb',
+  borderRadius: 5,
+  color: '#888',
+  font: {fontSize:20, fontWeight:'bold'},
+  keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD,
+  returnKeyType: Ti.UI.RETURNKEY_GO,
+  textAlign: 'left',
+  value: 'Enter a brewery you would like info on',
+  top: 60,
+  width: 300, height : 70
+});
+
+
+var textField = Ti.UI.createTextField({
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  color: '#336699',
+  top: 10, left: 10,
+  width: 250, height: 60
+});
+
+win.add(textArea,textField);
+win.open();
+}
+
+exports.info = info;

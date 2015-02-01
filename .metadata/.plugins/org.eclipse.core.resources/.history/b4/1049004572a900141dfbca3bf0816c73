@@ -1,0 +1,88 @@
+var dataPage = function(){
+	var dataWindow = Ti.UI.createWindow({
+		backgroundColor:"#cc6600"
+	});	
+	
+	//load JSON file to app.js
+	var loadFile = require("JSON");
+	
+	//creation of header and footer for both tables plus style for each
+	var craftHeader = Ti.UI.createView({
+		height:50,
+		top:20,
+		backgroundColor: "#bdbdbd"
+	});
+	
+	var craftHeadText =Ti.UI.createLabel({
+		text: loadFile.data.craftBrewNames.headTitle,
+		font: {fontSize: 14, fontFamily: "Arial"},
+		color:"#fff"
+	});
+	
+	craftHeader.add(craftHeadText);
+	
+	var craftFoot = Ti.UI.createView({
+		height:30,
+		bottom:30,
+		backgroundColor: "#d8d8d8"
+	});
+	
+	var craftFootText = Ti.UI.createLabel({
+		text: loadFile.data.craftBrewNames.footTitle,
+		font: {fontSize: 14, fontFamily: "Arial"},
+		color:"#fff"
+	});
+	
+	craftFoot.add(craftFootText);
+	
+	//creation of tables and sections
+	var brewTable = Ti.UI.createTableView({
+		top:20,
+		bottom:40
+	});
+	
+	var craftSection = Ti.UI.createTableViewSection({
+		headerView: craftHeader,
+		footerView: craftFoot
+	});
+	
+	var craftSections = [craftSection];
+	
+	var beerAlc = function(){
+		
+	};
+	
+	//creation of rows in tabe plus events to each row
+	for(var i=0, j=loadFile.data.craftBrewNames.favBrew.length -1; i<j; i++){
+		var row = Ti.UI.createTableViewRow({
+			title: loadFile.data.craftBrewNames.favBrew[i].brew,
+			hasChild:true
+		});
+		console.log(loadFile.data.craftBrewNames.favBrew[i].brew);
+		craftSection.add(row);
+		row.addEventListener("click", beerAlc);
+	};
+	
+	//creation of the close button to go back to the main window
+	var closeButton = Ti.UI.createLabel({
+		text: "< Back",
+		backgroundColor:"#bdbdbd",
+		color:"#000",
+		height:30,
+		font: {fontSize: 14, fontFamily: "Arial"},
+		width:"100%",
+		bottom:0,
+		textAlign:"center"
+	});
+	
+	var closeWindow = function(){
+		dataWindow.close();
+	};
+	
+	closeButton.addEventListener("click", closeWindow);
+	brewTable.setData(craftSections);
+	dataWindow.add(brewTable,closeButton);
+	dataWindow.open();
+};
+
+exports.dataPage = dataPage;

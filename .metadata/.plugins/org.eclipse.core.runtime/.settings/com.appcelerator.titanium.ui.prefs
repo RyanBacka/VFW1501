@@ -11,3 +11,5 @@ LAST_LAUNCH_TIMESTAMP=1422479680218
 eclipse.preferences.version=1
 preference.show.console.onError=true
 preference.studio.perspective.version=103
+scrollable\ View\:launchMode=run
+scrollable\ View\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.50B1C30B-5342-4ED6-B81F-DD6716A50861

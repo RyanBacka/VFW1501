@@ -1,0 +1,32 @@
+var info = function(){
+	var win = Ti.UI.createWindow({
+	  backgroundColor: '#33ccff'
+	});
+	
+	var infoView = Ti.UI.createView({
+		top:20,
+		left:10,
+		height:30,
+		width:250
+	});
+	
+	var infoText = Ti.UI.createLabel({
+		text:"Enter a brewery you would like more info on.",
+		font: {fontSize: 14, fontFamily:"Arial"}
+	});
+	
+	var infoField = Ti.UI.createTextField({
+		borderStyle: Ti.UI.INPUT_BORDERSTYLE_BEZEL,
+		backgroundColor:"white",
+		color: '#336699',
+		top: 80,
+		left: 10,
+		width: 250,
+		height: 30
+	});
+	infoView.add(infoText);
+	win.add(infoField,infoView);
+	win.open();
+};
+
+exports.info = info;
