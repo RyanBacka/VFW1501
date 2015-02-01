@@ -1,4 +1,4 @@
-//JSON data and export
+//JSON data and export to app.js
 var data = {
 		"craftBrewNames":{
 			"headTitle":"My Four Favorite Craft Breweries",

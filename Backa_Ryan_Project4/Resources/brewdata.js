@@ -6,7 +6,7 @@ var dataPage = function(){
 	//load JSON file to app.js
 	var loadFile = require("JSON");
 	
-	//creation of header and footer for both tables plus style for each
+	//creation of header and footer for my table
 	var craftHeader = Ti.UI.createView({
 		height:50,
 		top:20,
@@ -35,7 +35,7 @@ var dataPage = function(){
 	
 	craftFoot.add(craftFootText);
 	
-	//creation of tables and sections
+	//creation of table and section
 	var brewTable = Ti.UI.createTableView({
 		top:20,
 		bottom:40
@@ -48,8 +48,7 @@ var dataPage = function(){
 	
 	var craftSections = [craftSection];
 	
-	
-	
+	//attempted to pull in another array inside of JSON based on the first array unsuccessfully
 	var beerAlc = function(){
 		var beerTable = createTableView({
 			top:20
